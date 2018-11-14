@@ -1,0 +1,23 @@
+{
+  "name": "prime-multiplication-tables",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micxye/prime-multiplication-tables.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/micxye/prime-multiplication-tables/issues"
+  },
+  "homepage": "https://github.com/micxye/prime-multiplication-tables#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
