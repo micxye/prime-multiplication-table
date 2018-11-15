@@ -1,24 +1,35 @@
-// get N number of prime numbers
-// get products of all prime numbers
-// generate and log table
+const n = 10;
 
 const logTable = n => {
-    // create first line of all primes, space in front
+    console.log(`First ${n} Prime Numbers Multiplication Table! \n`);
+
     const primes = generateNPrimes(n);
     printFirstRow(primes);
-    // console.log('   ' + primes.join('     ')); // prints top row, 5 spaces between each number
-    // add line divider
-    // create 2nd line
+    printCellBorder();
+
+    primes.forEach(prime => {
+        printRow(prime, primes);
+        printCellBorder();
+    })
 }
 
 const printFirstRow = nums => {
     const formattedRow = nums.map(num => firstRowCellFormatter(num))
-    // prints the first row, with all cells formatted
     console.log('   ' + formattedRow.join(''));
 }
 
+const printCellBorder = () => console.log('   --------------------------------------------------');
+
+const printRow = (num, nums) => {
+    let str = firstColumnCellFormatter(num);
+    for (let i = 0; i < nums.length; i++) {
+        let prod = num * nums[i];
+        str += cellFormatter(prod);
+    }
+    console.log(str);
+}
+
 const firstRowCellFormatter = num => {
-    // 2 cases: 1 digit
     let str = num.toString();
     if (str.length === 1) {
         str = `  ${str}  `;
@@ -26,7 +37,6 @@ const firstRowCellFormatter = num => {
         str = ` ${str}  `;
     }
     return str;
-    // returns 5 character format for each num, spaces at end, e.g. __5__, _11__
 }
 
 const firstColumnCellFormatter = num => {
@@ -37,7 +47,6 @@ const firstColumnCellFormatter = num => {
         str = `${str}|`
     }
     return str;
-    // returns 3 character format with divider at end, e.g. 11|
 }
 
 const cellFormatter = num => {
@@ -47,10 +56,9 @@ const cellFormatter = num => {
     } else if (str.length === 2) {
         str = ` ${str} |`
     } else if (str.length === 3) {
-        str = ` ${str}|`
+        str = `${str} |`
     }
     return str;
-    // returns 5 character format, divider at the end, space always in front, e.g __5_|, _10_|, _143|
 }
 
 const generateNPrimes = n => {
@@ -68,12 +76,11 @@ const generateNPrimes = n => {
     return primes;
 }
 
-logTable(10)
-// process.stdout.write('2384823842384hsdfhjasfhwhefakwhfwhfkjahfjkasjkefhajkwhfjkawefjkahwkfh');
+logTable(n);
 
 module.exports = {
     generateNPrimes,
     firstRowCellFormatter,
     firstColumnCellFormatter,
-    cellFormatter
+    cellFormatter,
 }
