@@ -15,10 +15,10 @@ const logTable = n => {
 
 const printFirstRow = nums => {
     const formattedRow = nums.map(num => firstRowCellFormatter(num))
-    console.log('   ' + formattedRow.join(''));
+    console.log('    ' + formattedRow.join(''));
 }
 
-const printCellBorder = () => console.log('  ---------------------------------------------------');
+const printCellBorder = () => console.log('   ---------------------------------------------------');
 
 const printRow = (num, nums) => {
     let str = firstColumnCellFormatter(num);
@@ -42,9 +42,9 @@ const firstRowCellFormatter = num => {
 const firstColumnCellFormatter = num => {
     let str = num.toString();
     if (str.length === 1) {
-        str = ` ${str}|`
+        str = ` ${str} |`
     } else if (str.length === 2) {
-        str = `${str}|`
+        str = `${str} |`
     }
     return str;
 }

@@ -18,13 +18,13 @@ test('A double digit number input should create a 5 char string with 1 space in 
     expect(firstRowCellFormatter(10)).toBe(' 10  ');
 });
 
-// tests for firstColumnCellFormatter function, should always return 3 char strings
-test('A single digit number input should create a 3 char string with 1 space in front and a vertical bar at the end', () => {
-    expect(firstColumnCellFormatter(1)).toBe(' 1|');
+// tests for firstColumnCellFormatter function, should always return 4 char strings
+test('A single digit number input should create a 4 char string with 1 space in front and 1 space and vertical bar at the end', () => {
+    expect(firstColumnCellFormatter(1)).toBe(' 1 |');
 });
 
-test('A double digit number input should create a 3 char string with a vertical bar at the end', () => {
-    expect(firstColumnCellFormatter(10)).toBe('10|');
+test('A double digit number input should create a 4 char string with 1 space and vertical bar at the end', () => {
+    expect(firstColumnCellFormatter(10)).toBe('10 |');
 });
 
 // test for cellFormatter function, should always return 5 char strings
