@@ -18,7 +18,7 @@ const printFirstRow = nums => {
     console.log('   ' + formattedRow.join(''));
 }
 
-const printCellBorder = () => console.log('   --------------------------------------------------');
+const printCellBorder = () => console.log('  ---------------------------------------------------');
 
 const printRow = (num, nums) => {
     let str = firstColumnCellFormatter(num);
